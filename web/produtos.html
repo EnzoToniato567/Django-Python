@@ -1,0 +1,86 @@
+
+{% load static %}
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+    <title>Cadastro de Produtos</title>
+</head>
+<body>
+
+    <header class="header-links">
+        <div class="container-links">
+            <li><a href="{% url 'home' %}">Home</a></li>
+            <li><a href="{% url 'pagina-produtos' %}">Produtos</a></li>
+            <li><a href="{% url 'pagina-categorias' %}">Categorias</a></li>
+        </div>
+    </header>
+
+    <div class="container-menu">
+        <h1 class="h1-title">Produtos</h1>
+        <p class="p-title">Cadastro e gerenciamento de produtos</p>
+    </div>
+
+    <div class="container-cadastro">
+        <div class="form-produtos">
+            <h2 class="h2-title">Novo Produto</h2>
+
+            <form id="form-produtos">
+                <label for="nome">Nome:</label>
+                <input type="text" id="nome" name="nome" required>
+
+                <label for="preco">Preço:</label>
+                <input type="number" id="preco" name="preco" min="0" step="0.01" required>
+
+                <label for="categoria">Categoria:</label>
+                <select id="categoria" name="categoria" required>
+                    <option value="">Selecione uma categoria</option>
+                </select>
+
+                <button type="submit" class="btn-cadastrar">
+                    Cadastrar
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <div class="container-lista">
+        <div class="lista-produtos">
+            <h2 class="h2-title">Lista de Produtos</h2>
+
+            <input type="search" id="busca-produto" placeholder="Buscar produto">
+
+            <button type="button" onclick="buscarProduto()">
+                Buscar
+            </button>
+
+            <button type="button" onclick="listarProdutos()">
+                Listar todos
+            </button>
+
+            <table class="tabela-produtos">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Nome</th>
+                        <th>Preço</th>
+                        <th>Categoria</th>
+                        <th>Ações</th>
+                    </tr>
+                </thead>
+
+                <tbody id="lista-produtos">
+                    <tr>
+                        <td colspan="5">Nenhum produto cadastrado.</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <script src="{% static 'script.js' %}" defer></script>
+
+</body>
+</html>

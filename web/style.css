@@ -1,0 +1,152 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    padding: 24px;
+    background: #f3fff9;
+    color: #183b2d;
+    font-family: Arial, sans-serif;
+}
+
+header.header-links {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 18px 24px;
+    border-radius: 12px;
+    background: #98fad1;
+}
+
+div.container-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    list-style: none;
+}
+
+.container-links li {
+    list-style: none;
+}
+
+.container-links a {
+    color: #183b2d;
+    font-weight: 700;
+    text-decoration: none;
+}
+
+.container-links a:hover {
+    text-decoration: underline;
+}
+
+.container-menu,
+.container-cadastro,
+.container-lista {
+    width: min(100%, 1000px);
+    margin: 24px auto 0;
+}
+
+.container-menu {
+    padding: 28px;
+    border-radius: 12px;
+    align-items: center;
+    background: #98fad1;
+}
+
+.h1-title,
+.h2-title {
+    margin-bottom: 12px;
+}
+
+.container-cadastro,
+.container-lista,
+.card-produtos,
+.card-categorias,
+.form-produtos,
+.form-categorias,
+.lista-produtos,
+.lista-categorias {
+    padding: 24px;
+    border: 1px solid #cceedd;
+    border-radius: 12px;
+    background: #fff;
+}
+
+form {
+    display: grid;
+    gap: 10px;
+}
+
+input,
+select,
+button {
+    min-height: 40px;
+    padding: 8px 12px;
+    border: 1px solid #b8d9c8;
+    border-radius: 7px;
+    font: inherit;
+}
+
+button,
+.btn-cadastrar {
+    border-color: #70d5a8;
+    background: #98fad1;
+    color: #183b2d;
+    cursor: pointer;
+    font-weight: 700;
+}
+
+button:hover,
+.btn-cadastrar:hover {
+    background: #7ce9bb;
+}
+
+table {
+    width: 100%;
+    margin-top: 16px;
+    border-collapse: collapse;
+}
+
+th,
+td {
+    padding: 12px;
+    border-bottom: 1px solid #d9eee3;
+    text-align: left;
+}
+
+th {
+    background: #e5fff2;
+}
+
+.render-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 16px;
+}
+
+@media (max-width: 720px) {
+    body {
+        padding: 14px;
+    }
+
+    .container-cadastro,
+    .container-lista,
+    .form-produtos,
+    .form-categorias,
+    .lista-produtos,
+    .lista-categorias {
+        padding: 16px;
+    }
+
+    table {
+        font-size: 0.85rem;
+    }
+
+    th,
+    td {
+        padding: 8px 6px;
+    }
+}

@@ -1,0 +1,76 @@
+
+{% load static %}
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+    <title>Cadastro de Categorias</title>
+</head>
+<body>
+
+    <header class="header-links">
+        <div class="container-links">
+            <li><a href="{% url 'home' %}">Home</a></li>
+            <li><a href="{% url 'pagina-produtos' %}">Produtos</a></li>
+            <li><a href="{% url 'pagina-categorias' %}">Categorias</a></li>
+        </div>
+    </header>
+
+    <div class="container-menu">
+        <h1 class="h1-title">Categorias</h1>
+        <p class="p-title">Cadastro e gerenciamento de categorias</p>
+    </div>
+
+    <div class="container-cadastro">
+        <div class="form-categorias">
+            <h2 class="h2-title">Nova Categoria</h2>
+
+            <form id="form-categorias">
+                <label for="nome">Nome:</label>
+                <input type="text" id="nome" name="nome" required>
+
+                <button type="submit" class="btn-cadastrar">
+                    Cadastrar
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <div class="container-lista">
+        <div class="lista-categorias">
+            <h2 class="h2-title">Lista de Categorias</h2>
+
+            <input type="search" id="busca-categoria" placeholder="Buscar categoria">
+
+            <button type="button" onclick="buscarCategoria()">
+                Buscar
+            </button>
+
+            <button type="button" onclick="listarCategorias()">
+                Listar todas
+            </button>
+
+            <table class="tabela-categorias">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Nome</th>
+                        <th>Ações</th>
+                    </tr>
+                </thead>
+
+                <tbody id="lista-categorias">
+                    <tr>
+                        <td colspan="3">Nenhuma categoria cadastrada.</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <script src="{% static 'script.js' %}" defer></script>
+
+</body>
+</html>

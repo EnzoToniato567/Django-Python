@@ -2,7 +2,7 @@
 
 Backend em Django REST Framework para gerenciar categorias e produtos em um banco SQLite3.
 
->!Atenção: Caso queira testar pelo link do git pages, primeiro você deve abrir o server local para a API puxar os dados da database
+>!Atenção: Caso queira testar pelo link do git pages, primeiro você deve abrir o server local para a API puxar os dados da database. Caso contrário, o site nem abrirá.
 
 ## Django
 
